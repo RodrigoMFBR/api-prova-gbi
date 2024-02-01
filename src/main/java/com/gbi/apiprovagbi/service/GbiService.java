@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class GbiService {
+
     @Autowired
     private RestTemplate restTemplate;
 
