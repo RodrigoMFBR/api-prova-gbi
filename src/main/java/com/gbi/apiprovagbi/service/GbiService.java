@@ -17,6 +17,18 @@ public class GbiService {
     // Método para consultar CEP
     public String getAddressByCep(String cep) {
         String apiUrl = correiosApiUrl + cep + "/json";
-        return restTemplate.getForObject(apiUrl, String.class);
+
+        if (cep.length() != 8) {
+            return "CEP inválido";
+        } else {
+            String retornoServico = restTemplate.getForObject(apiUrl, String.class);
+
+            if (retornoServico.contains("cep")) {
+                return retornoServico;
+            } else {
+                return "CEP não encontrado";
+            }
+        }
+
     }
 }
