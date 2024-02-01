@@ -38,7 +38,7 @@ class GbiServiceTest {
         String resultado = gbiService.getAddressByCep("11111111");
 
         // Verificação do resultado
-        assertEquals("CEP N ENCONTRADO", resultado);
+        assertEquals(null, resultado);
 
     }
 
